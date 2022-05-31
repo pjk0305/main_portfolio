@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>arcane</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Six+Caps&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/fullPage.js"></script>
+</head>
+<body>
+    <div id="page">
+        <div id="toggle">
+          <div class="bar"></div>
+        </div>
+        <section id="overlay">
+          <nav>
+            <ul>
+              <li><a href="#main_page">MAIN</a></li>
+              <li><a href="#story_page">STORY</a></li>
+              <li><a href="#character_page">CHARACTER</a></li>
+              <li><a href="#gallery_page">Gallery</a></li>
+            </ul>
+          </nav>
+        </section>
+      </div>
+<div id="wrap">
+    <div id="intro_page">
+        <video src="video/intro.mp4" autoplay muted loop class="intro_bg"></video>
+        <img src="images/arcane_logo.png" alt="" id="intro_logo">
+    </div>
+
+    <div id="main_page">
+        <div id="main_object">
+            <img src="images/spring.png" alt="" id="spring">
+            <img src="images/spring1.png" alt="" id="spring1">
+            <img src="images/spring2.png" alt="" id="spring2">
+            <img src="images/Silco.png" alt="" id="Silco">
+            <img src="images/vi.png" alt="" id="vi">
+            <img src="images/Caitlyn.png" alt="" id="Caitlyn">
+            <img src="images/Jayce.png" alt="" id="Jayce">
+            <img src="images/Ekko.png" alt="" id="Ekko">
+            <img src="images/Mel.png" alt="" id="Mel">
+            <img src="images/jinx.png" alt="" id="Jinx">
+            <img src="images/Viktor.png" alt="" id="Viktor">
+            <img src="images/arcane_logo.png" alt="" id="arcane_logo">
+        </div>
+        <ul id="menu_icon">
+            <li><img src="images/menu_icon.png" alt="" class="menu_icon_img1"><a href="#main_page" id="scroll_move">Main</a></li>
+            <li><img src="images/menu_icon.png" alt="" class="menu_icon_img2"><a href="#story_page" id="scroll_move">Story</a></li>
+            <li><img src="images/menu_icon.png" alt="" class="menu_icon_img3"><a href="#character_page" id="scroll_move">Character</a></li>
+            <li><img src="images/menu_icon.png" alt="" class="menu_icon_img4"><a href="#gallery_page" id="scroll_move">Gallery</a></li>
+        </ul>
+        <div id="mouse">
+            <h1>scroll</h1>
+            <div id="wheel"></div>
+        </div>
+    </div> 
+
+    <div id="story_page">
+        <div class="story_page_title">
+            <h1>STORY</h1>
+        </div>
+        <div id="story_mouse">
+            <h1>left and right</h1>
+            <div id="story_wheel"></div>
+        </div>
+        <div class="splitview skewed">
+            <div class="panel bottom">
+                <div class="content">
+                    <div class="description">
+                        <h1>Piltover</h1>
+                        <p>Jaun is a huge underground city located under a deep valley and valley that runs through the filter over.</p>
+                    </div>
+    
+                    <img src="images/piltover.jpg" alt="Original">
+                </div>
+            </div>
+    
+            <div class="panel top">
+                <div class="content">
+                    <div class="description">
+                        <h1>Zaun</h1>
+                        <p>Filtover is a prosperous progressive city, and its influence is increasing. This is the cultural center of Baloran, and it is also a place where art and technology, commerce and innovation develop together.</p>
+                    </div>
+    
+                    <img src="images/zaun.jpg" alt="Duotone">
+                </div>
+            </div>
+    
+            <div class="handle"></div>
+        </div>
+    </div>
+
+    <div id="character_page">
+        <div id="character_wrap">
+            <h1>CHARACTER</h1>
+            <img src="images/closebt.png" alt="" id="character_wrap_closebt">
+            <div id="character_box">
+                <ul id="character_icon">
+                    <li><img src="images/jinx_icon.png" alt="" id="jinx_icon"></li>
+                    <li><img src="images/vi_icon.png" alt="" id="vi_icon"></li>
+                    <li><img src="images/Silco_icon.png" alt="" id="slico_icon"></li>
+                    <li><img src="images/vander_icon.png" alt="" id="vander_icon"></li>
+                </ul>
+                <div class="character_info">
+                    <div class="character_info_box1">
+                        <img id="character_info_img" src="images/CharacterPoster-Jinx.jpg" alt="">
+                    </div>
+                    <div class="character_info_box2">
+                        <h3>Jinx</h3>
+                        <p>Name : Jinx<br>One's real name : Powder<br>Voice actor : Ella Purnell<br></p>
+                        <iframe width="500" height="300" src="https://www.youtube.com/embed/qhs5DTaOzHU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="character_video"></iframe>
+                        <div class="btn" onclick="window.open('https://namu.wiki/w/%EC%95%84%EC%BC%80%EC%9D%B8:%20%EB%A6%AC%EA%B7%B8%20%EC%98%A4%EB%B8%8C%20%EB%A0%88%EC%A0%84%EB%93%9C')">
+                            <span>View more</span>
+                        </div>
+                        <div class="sns_icon">
+                            <img src="images/facebook_icon.png" alt="" class="facebook_icon">
+                            <img src="images/instagram_icon.png" alt=""class="instagram_icon">
+                            <img src="images/youtube_icon.png" alt="" class="youtube_icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        <ul id="jinx_bg">
+            <div class="jinx_text-1 mousemove-effect-1-el" data-mousemove-effect1-hor-res="0.1" data-mousemove-effect1-ver-res="0.1">CHARACTER</div>
+            <div class="jinx_text-2 mousemove-effect-1-el"  data-mousemove-effect1-hor-res="-0.1" data-mousemove-effect1-ver-res="-0.1">CLICK</div>
+            <li><img src="images/jinx_bg_effect.png" alt="" class="jinx_effect"></li>
+        </ul>
+        <div class='outer-scratch'>
+            <div class="inner-scratch">
+              <div class="background grain"></div>
+            </div>
+          </div>
+    </div>
+    <div id="gallery_page">
+        <div class="gallery_title">
+            <h1>Content Gallery</h1>
+        </div>
+        <img src="images/gallery_bd.png" alt="">
+        <div id="gallery_wrap">
+            <ul id="gallery_slide">
+                <li>
+                    <a href="https://youtu.be/cMzi3-2Nct0" target='_blank'>
+                        <img src="images/gallery-1.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtu.be/mqMYpAuxqbk" target='_blank'>
+                        <img src="images/gallery-2.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtu.be/0JSwG2sqUm8" target='_blank'>
+                        <img src="images/gallery-3.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtu.be/8dUZ0WSNbjg" target='_blank'>
+                        <img src="images/gallery-4.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtu.be/bXocSEhAQ2M" target='_blank'>
+                        <img src="images/gallery-5.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtu.be/F5tSoaJ93ac" target='_blank'>
+                        <img src="images/gallery-6.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtu.be/4Ps6nV4wiCE" target='_blank'>
+                        <img src="images/gallery-7.jpg" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="gallery_box">
+            <h1>CLICK</h1>
+        </div>
+        <img src="" alt="" id="gallery_play_bt">
+        <img src="images/prev_bt.png" alt="" id="gallery_prev_bt">
+        <img src="images/next_bt.png" alt="" id="gallery_next_bt">
+        <div id="footer">
+            <div id="footer_left">
+                <a href="https://www.riotgames.com/ko" target='_blank'><img src="images/riot-games-logo.png" alt="" id="riotgames_icon"></a>
+            </div>
+            <div id="footer_center">
+                <h1>-지금 만나보세요-</h1>
+                <a href="https://www.netflix.com/kr/title/81435684" target='_blank'><img src="images/netflix.png" alt="" id="netflix_icon"></a>
+            </div>
+            <div id="footer_right">
+                <img src="images/footer_icon.png" alt="" id="footer_icon">
+            </div>
+        </div>  
+    </div>
+</div>
+</body>
+</html>
