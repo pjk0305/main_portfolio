@@ -1,474 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- 모바일은 화면크기를 자동으로 줄여서 표현하는 방식. 1:1사이즈의 대응을 위하여 viewport코드를 추가한다 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PJK_PortFolio</title>
-    <!-- 제이쿼리 설치 -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Six+Caps&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
-<script>
-	$(document).ready(function(){
-        let header_age = 0;
-        let main_work_age = 0;
-        let pc_mobile_age = 0;
-        let pc_work_age = 0;
-        let about_me1_age = 0;
-        let about_me2_age = 0;
-
-        $(window).scroll(function(){
-            sc = $(window).scrollTop()
-
-            if( sc >= $('#main_work').offset().top-50 ){
-                $('header').css({'position':'fixed','z-index':'9999999','top':'0'})
-            }
-            else {
-                $('header').css({'position':'static'})
-            }
-            if(sc >= $('#main_work').offset().top-300){
-                main_work_age = main_work_age + 1
-                if( main_work_age == 2){
-                    $('#main_work_title>h3').animate({'maginTop':'0','opacity':'1'},300)
-                    $('#main_work_title>p').delay(200).animate({'maginTop':'0','opacity':'1'},300)
-                    $('#main_work_img').delay(400).animate({'maginTop':'50px','opacity':'1'},300)
-                }        
-            }
-            if( sc >= $('#pc_work').offset().top-300){
-                pc_work_age = pc_work_age + 1
-                if( pc_work_age == 2){
-                    $('#pc_work>h3').animate({'maginTop':'0','opacity':'1'},300)
-                    $('#pc_work>p').delay(200).animate({'maginTop':'20px','opacity':'1'},300)
-                    $('#pc_work>ul').delay(400).animate({'maginTop':'30px','opacity':'1'},300)
-                } 
-            }
-            if( sc >= $('#about_me').offset().top-300){
-                about_me1_age = about_me1_age + 1
-                if( about_me1_age == 2){
-                    $('#about_me>h3').animate({'maginTop':'0','opacity':'1'},300)
-                    $('#about_me_img').delay(200).animate({'maginTop':'0','opacity':'1'},300)
-                }
-            }
-            if( sc >= $('#about_me').offset().top-300){
-                about_me2_age = about_me2_age + 1
-                if( about_me2_age == 2){
-                    $('#skills>ul>li:nth-child(1)>.skills_bg>.skills_box').animate({'width':'95%'},200)
-                    $('#skills>ul>li:nth-child(2)>.skills_bg>.skills_box').delay(100).animate({'width':'85%'},200)
-                    $('#skills>ul>li:nth-child(3)>.skills_bg>.skills_box').delay(200).animate({'width':'80%'},200)
-                    $('#skills>ul>li:nth-child(4)>.skills_bg>.skills_box').delay(300).animate({'width':'80%'},200)
-                }
-            }
-        })
-
-        $('#close_btn').click(function(){
-            $('#menu_popup').fadeOut()
-        })
-        $('#mobile_menu').click(function(){
-            $('#menu_popup').fadeIn()
-        })
-        $('#main>h1').animate({'top':'-50px','opacity':'1'},300)
-        $('#main>p').delay(100).animate({'top':'70px','opacity':'1'},300)
-        setInterval(function(){
-            $('#wheel').animate({'top':'12px','opacity':'0'},290)
-            $('#wheel').animate({'top':'6px','opacity':'1'},290)
-        },600)
-		$('#menu_popup_menu>li').mouseenter(function(){
-            $(this).children('.sub').stop().slideDown()
-        })
-        $('#menu_popup_menu>li').mouseleave(function(){
-            $(this).children('.sub').stop().slideUp()
-        })
-	});
-</script>
-<style>
-    * { margin: 0; padding: 0; list-style: none; }
-    a { text-decoration: none; color: inherit;}
-    body,html{height: 100%;}
-    #main{width: 100%;height: 100%;background-color: #363062; background-size: cover; color: #fff; position: relative;display: flex;align-items: center;justify-content: center;}
-    #main svg {max-width: 45rem;width: 100%;height:500px;fill: none;stroke: white;stroke-width: 4; margin-top: -110px;}
-    #main svg tspan > tspan {stroke-dasharray: 1500;stroke-dashoffset: -1500;}
-    #main svg tspan > tspan:nth-of-type(1) {animation: draw 300ms 150ms forwards;}
-    #main svg tspan > tspan:nth-of-type(2) {animation: draw 300ms 300ms forwards;}
-    #main svg tspan > tspan:nth-of-type(3) {animation: draw 300ms 450ms forwards;}
-    #main svg tspan > tspan:nth-of-type(4) {animation: draw 300ms 600ms forwards;}
-    #main svg tspan > tspan:nth-of-type(5) {animation: draw 300ms 750ms forwards;}
-    #main svg tspan > tspan:nth-of-type(6) {animation: draw 300ms 900ms forwards;}
-    #main svg tspan > tspan:nth-of-type(7) {animation: draw 300ms 1050ms forwards;}
-    #main svg tspan > tspan:nth-of-type(8) {animation: draw 300ms 1200ms forwards;}
-    #main svg tspan > tspan:nth-of-type(9) {animation: draw 300ms 1350ms forwards;}
-    #main svg tspan > tspan:nth-of-type(10) {animation: draw 300ms 1500ms forwards;}
-    #main svg tspan > tspan:nth-of-type(11) {animation: draw 300ms 1650ms forwards;}
-    #main svg tspan > tspan:nth-of-type(12) {animation: draw 300ms 1800ms forwards;}
-    #main svg tspan > tspan:nth-of-type(13) {animation: draw 300ms 1950ms forwards;}
-    #main svg tspan > tspan:nth-of-type(14) {animation: draw 300ms 2100ms forwards;}
-    #main svg tspan > tspan:nth-of-type(15) {animation: draw 300ms 2250ms forwards;}
-    #main svg tspan > tspan:nth-of-type(16) {animation: draw 300ms 2400ms forwards;}
-    #main svg tspan > tspan:nth-of-type(17) {animation: draw 300ms 2550ms forwards;}
-    #main svg tspan > tspan:nth-of-type(18) {animation: draw 300ms 2700ms forwards;}
-    #main svg tspan > tspan:nth-of-type(19) {animation: draw 300ms 2850ms forwards;}
-    #main svg tspan > tspan:nth-of-type(20) {animation: draw 300ms 3000ms forwards;}
-    #main svg tspan > tspan:nth-of-type(21) {animation: draw 300ms 3150ms forwards;}
-    #main svg tspan > tspan:nth-of-type(22) {animation: draw 300ms 3300ms forwards;}
-    @keyframes draw {100% {stroke-dashoffset: 0;}}
-    #mouse{width: 20px;height: 35px; border: 2px solid #fff; border-radius: 330px;position: absolute;left: 0;right: 0;bottom: 30px; margin: auto;}
-    #wheel{width: 6px;height: 6px;border-radius: 4px;position: absolute;left: 0;right: 0;top: 6px; background-color: #fff;margin: auto;}
-    header{width: 100%;height: 50px;line-height: 50px; border: 1px solid #999;background-color: #4D4C7D;color: #000;}
-    #logo{float: left;margin-left: 20px;}
-    #menu{float: right;margin-right: 20px;}
-    #menu>li{float: left;margin-left: 20px; font-size: 14px;}
-    #mobile_menu{width: 20px;height: 20px;float: right; margin-top: 15px; margin-right: 20px;cursor: pointer;}
-    #mobile_menu>li{width: 20px;height: 2px;background-color: #fff;}
-    #mobile_menu>li:nth-child(2){margin: 7px 0;}
-    #menu_popup{width: 100%;height: 100%;position: fixed; background-color: rgba(255,255,255,0.95); left: 0;top: 0; display: none;}
-    #close_btn{float: right; position: absolute; right: 0; bottom: 0px; margin: 10px; cursor: pointer;}
-    #menu_popup_menu{float: right;clear: both; text-align: right; margin: 50px 10px 0;}
-    #menu_popup_menu>li{font-size: 18px;line-height: 35px;font-weight: 900;}
-    .sub{margin: 15px 0; font-size: 14px;line-height: 25px; font-weight: 400;color: #999; display: none;}
-    .sub>li:hover{color: #000;}
-    #main_work{width: 100%;padding: 100px 0; background-color: #827397; }
-    #main_work_title{width: 1200px;margin: auto;text-align: center;}
-    #main_work_title>h3{margin-top: 30px;opacity: 0;}
-    #main_work_title>p{margin-top: 30px;opacity: 0;}
-    #main_work_img{width: 970px;display: block;margin: auto;margin-top: 80px;border-radius: 10px;box-shadow: 0 5px 10px rgba(0,0,0,0.2); opacity: 0;}
-    #main_work1{width: 1200px;height: 400px; margin: auto;margin-top: 100px; overflow: hidden;text-align: center;}
-    #main_work1_text{width: 75%;height: 700px; display: inline-block;}
-    #main_work1_fonts{ text-align: center; margin: 20px;}
-    #main_work1_fonts>h2{font-size: 30px;line-height: 50px;}
-    #main_work1_fonts>ul{overflow: hidden;}
-    #main_work1_fonts>ul>li{width: 25%; float: left; margin-top: 20px; margin: 30px;}
-    #main_work1_fonts>ul>li>h3{font-size: 16px;line-height: 20px;}
-    #main_work1_fonts>ul>li>h4{margin-top: 25px;font-size: 14px;font-weight: 400;color: #999; text-decoration: underline;}
-    #main_work1_fonts>ul>li>h5{font-size: 30px; margin-top: 15px;}
-    #main_work1_fonts>ul>li:nth-child(1)>h5{font-family: 'Six Caps', sans-serif;}
-    #main_work1_fonts>ul>li:nth-child(2)>h5{font-family: 'Oleo Script Swash Caps', cursive;}
-    #main_work1_fonts>ul>li:nth-child(3)>h5{font-family: 'Koulen', cursive;}
-    #main_work1_fonts>p{margin-top: 20px;}
-    #main_work2{width: 1200px;margin: auto;overflow: hidden; text-align: center;}
-    #main_work2_text{width: 55%; display: inline-block;}
-    #main_work2_text>p{ margin: auto;}
-    #main_work2_text>button{width: 130px;height: 40px;border: 2px solid #000;background-color: #fff;border-radius: 50px;margin-top: 20px; transition: 0.5s; cursor: pointer;}
-    #main_work2_text>button:hover{background-color: #000;color: #fff;}
-    #pc_work{width: 100%;background-color: #827397; padding: 100px 0; text-align: center;}
-    #pc_work>h3{font-size: 22px; margin-top: 30px; opacity: 0;}
-    #pc_work>p{width: 85%;margin: auto; margin-top: 50px; opacity: 0;}
-    #pc_work>ul{width: 1200px; overflow: hidden;margin: auto; margin-top: 60px; opacity: 0;}
-    #pc_work>ul>li{width: 30.333%;margin: 1.5%; float: left; border-radius: 15px;overflow: hidden; position: relative; background-color: #000;}
-    #pc_work>ul>li>img{width: 100%; vertical-align: top;}
-    #pc_work>ul>li:hover>img{opacity: 0.5;}
-    #pc_work>ul>li>button{position: absolute;width: 120px;height: 30px;border: 1px solid #fff;background-color: transparent; color: #fff; left: 0;right: 0;top: 0;bottom: 0;margin: auto;border-radius: 50px; cursor: pointer; transition: 0.5s; display: none;}
-    #pc_work>ul>li:hover>button{display: inline;}
-    #pc_work>ul>li>button:hover{background-color: #000; border-color: #000;}
-    #about_me{width: 100%;padding: 100px 0; text-align: center; background-color: #827397;}
-    #about_me>h3{margin-top: 30px;opacity: 0;}
-    #about_me>#about_me_img{width: 200px;height: 200px;border-radius: 100px;background-color: #aaa;margin-top: 30px;opacity: 0;}
-    #about_me1{width: 1000px;margin: auto;margin-top: 30px;border-top: 1px solid #ccc;overflow: hidden; border-bottom: 1px solid #000; padding: 1.5em;}
-    #liscence{width: 48%;margin: 1%;float: left; text-align: left;}
-    #liscence>h4{line-height: 40px; font-size: 16px;}
-    #liscence>ul{width: 90%;margin: auto;}
-    #liscence>ul>li{line-height: 30px;overflow: hidden;}
-    #liscence>ul>li>h5{font-size: 14px;float: left;}
-    #liscence>ul>li>h6{font-size: 14px;float: right;}
-    #skills{width: 48%;height: 200px;margin: 1%;float: right;}
-    #skills>h4{font-size: 16px;line-height: 40px;}
-    #skills>ul{width: 90%;margin: auto;}
-    #skills>ul>li{font-size: 16px;line-height: 30px;overflow: hidden;}
-    #skills>ul>li>h5{float: left;}
-    #skills>ul>li>h6{float: right;}
-    #skills>ul>li>.skills_bg{width: 100%;height: 10px;background-color: #ccc;margin-top: 30px;}
-    #skills>ul>li>.skills_bg>.skills_box{width: 0%;height: 10px;background:linear-gradient(to right, rgb(45, 126, 201),rgb(46, 151, 78));}
-    #contact_me{width: 100%;padding: 200px 0; background-color: #4D4C7D; color: #fff;text-align: center;}
-    #contact_me>h4{line-height: 40px;}
-    #contact_me>ul{width: 1000px;margin: auto; overflow: hidden;}
-    #contact_me>ul>li:nth-child(1){width: 25%;padding: 30px 0;border-right: 1px solid #999; box-sizing: border-box; float: left;}
-    #contact_me>ul>li:nth-child(2){width: 50%;padding: 30px 0;border-right: 1px solid #999; box-sizing: border-box; float: left;}
-    #contact_me>ul>li:nth-child(3){width: 25%;padding: 30px 0; box-sizing: border-box; float: left;}
-    footer{width: 100%;background-color: #363062;overflow: hidden;}
-    footer>h3{float: left; line-height: 50px;margin-left: 20px;}
-    footer>p{font-size: 14px;float: right; line-height: 25px;margin-right: 20px;text-align: right;}
-  </style>
-  <style>
-    /*미디어쿼리*/
-	@media all and (min-width:320px) { /* 320~767 모바일 */
-        #main>h1{font-size: 20px;top: -20px;}
-        #main>p{font-size: 14px;line-height: 25px;top: 100px; opacity: 0;}
-        #menu{display: none;}
-        #mobile_menu{display: block;}
-        #main_work_title{width: 96%;}
-        #main_work_img{width: 90%;}
-        #main_work1{display: none;}
-        #main_work1_text{width: 75%;}
-        #main_work2{width: 90%;}
-        #main_work2_text{width: 90%;margin: 5%;}
-        #main_work2_text>p{margin-top: 20px;}
-        #main_work2_text>button{margin-top: 15px;}
-        #pc_work>ul{width: 90%;}
-        #pc_work>ul>li{width: 46%;margin: 2%;}
-        #about_me1{width: 90%;}
-        #liscence{width: 92%;margin: 4%;}
-        #skills{width: 92%;margin: 4%;}
-        #about_me2{width: 90%;}
-        #contact_me>ul{width: 90%;}
-        #contact_me>ul>li:nth-child(1){width: 100%;border-right: none;}
-        #contact_me>ul>li:nth-child(2){width: 100%; border-right: none;}
-        #contact_me>ul>li:nth-child(3){width: 100%;}
-        footer>h3{float: none;}
-        footer>p{float: none;}
-    }
-    @media all and (min-width:768px) { /* 768~1023 태블릿 */
-        #main>h1{font-size: 35px;top: -20px;}
-        #main>p{font-size: 22px;line-height: 30px;top: 100px; opacity: 0;}
-        #menu{display: block;}
-        #mobile_menu{display: none;}
-        #main_work_title{width: 96%;}
-        #main_work_img{width: 90%;}
-        #main_work1{width: 90%; display: block;}
-        #main_work1_text{width: 90%;}
-        #main_work2{width: 60%;}
-        #main_work2_text{width: 75%;margin: 0;}
-        #main_work2_text>p{margin-top: 20px;}
-        #main_work2_text>button{margin-top: 10px;}
-        #pc_work>ul{width: 90%;}
-        #pc_work>ul>li{width: 30.333%;margin: 1.5%;}
-        #about_me1{width: 90%;}
-        #liscence{width: 48%;margin: 1%;}
-        #skills{width: 48%;margin: 1%;}
-        #about_me2{width: 90%;}
-        #contact_me>ul{width: 90%;}
-        #contact_me>ul>li:nth-child(1){width: 25%;border-right: 1px solid #999;}
-        #contact_me>ul>li:nth-child(2){width: 50%;border-right: 1px solid #999;}
-        #contact_me>ul>li:nth-child(3){width: 25%;}
-        footer>h3{float: left;}
-        footer>p{float: right;}
-    }
-    @media all and (min-width:1200px) { /* 1024 pc */
-        #main>h1{font-size: 35px;top: -20px;}
-        #main>p{font-size: 22px;line-height: 30px;top: 100px; opacity: 0;}
-        #menu{display: block;}
-        #mobile_menu{display: none;}
-        #main_work_title{width: 1200px;}
-        #main_work_img{width: 970px;}
-        #main_work1{width: 1200px; display: block;}
-        #main_work1_text{width: 75%;}
-        #main_work2{width: 1200px;}
-        #main_work2_text{width: 55%;margin: 0;}
-        #main_work2_text>img{margin-top: 30px;}
-        #main_work2_text>p{margin-top: 50px;}
-        #main_work2_text>button{margin-top: 20px;}
-        #pc_work>ul{width: 1200px;}
-        #pc_work>ul>li{width: 30.333%;margin: 1.5%;}
-        #about_me1{width: 1000px;}
-        #liscence{width: 48%;margin: 1%;}
-        #skills{width: 48%;margin: 1%;}
-        #about_me2{width: 1000px;}
-        #contact_me>ul{width: 1000px;}
-        #contact_me>ul>li:nth-child(1){width: 25%;border-right: 1px solid #999;}
-        #contact_me>ul>li:nth-child(2){width: 50%;border-right: 1px solid #999;}
-        #contact_me>ul>li:nth-child(3){width: 25%;}
-        footer>h3{float: left;}
-        footer>p{float: right;}
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>arcane</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Six+Caps&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/fullPage.js"></script>
 </head>
 <body>
-    <div id="main">
-        <svg viewBox="0 0 1418 116" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <g stroke="none" fill="none" fill-rule="evenodd" fill-opacity="0">
-              <text id="@WebDesignerMag" stroke="#fff" fill="#645F5A" font-weight="normal" font-family="PermanentMarker-Regular, Permanent Marker" font-size="144">
-                <tspan x="3" y="109"><!--
-                  --><tspan>P</tspan><!--
-                  --><tspan>A</tspan><!--
-                  --><tspan>R</tspan><!--
-                  --><tspan>K</tspan><!--
-                  --><tspan>J</tspan><!--
-                  --><tspan>U</tspan><!--
-                  --><tspan>N</tspan><!--
-                  --><tspan>K</tspan><!--
-                  --><tspan>Y</tspan><!--
-                  --><tspan>U</tspan><!--
-                  --><tspan>'</tspan><!--
-                  --><tspan>S</tspan><!--
-                --></tspan>
-                <tspan x="3" y="230"> <!--  
-                  --><tspan>P</tspan><!--
-                  --><tspan>O</tspan><!--
-                  --><tspan>R</tspan><!--
-                  --><tspan>T</tspan><!--
-                  --><tspan>F</tspan><!--
-                  --><tspan>O</tspan><!--
-                  --><tspan>L</tspan><!--
-                  --><tspan>I</tspan><!--
-                  --><tspan>O</tspan><!--
-                --></tspan>
-              </text>
-            </g>
-          </svg>
+    <div id="page">
+        <div id="toggle">
+          <div class="bar"></div>
+        </div>
+        <section id="overlay">
+          <nav>
+            <ul>
+              <li><a href="#main_page">MAIN</a></li>
+              <li><a href="#story_page">STORY</a></li>
+              <li><a href="#character_page">CHARACTER</a></li>
+              <li><a href="#gallery_page">Gallery</a></li>
+            </ul>
+          </nav>
+        </section>
+      </div>
+<div id="wrap">
+    <div id="intro_page">
+        <video src="video/intro.mp4" autoplay muted loop class="intro_bg"></video>
+        <img src="images/arcane_logo.png" alt="" id="intro_logo">
+    </div>
+
+    <div id="main_page">
+        <div id="main_object">
+            <img src="images/spring.png" alt="" id="spring">
+            <img src="images/spring1.png" alt="" id="spring1">
+            <img src="images/spring2.png" alt="" id="spring2">
+            <img src="images/Silco.png" alt="" id="Silco">
+            <img src="images/vi.png" alt="" id="vi">
+            <img src="images/Caitlyn.png" alt="" id="Caitlyn">
+            <img src="images/Jayce.png" alt="" id="Jayce">
+            <img src="images/Ekko.png" alt="" id="Ekko">
+            <img src="images/Mel.png" alt="" id="Mel">
+            <img src="images/jinx.png" alt="" id="Jinx">
+            <img src="images/Viktor.png" alt="" id="Viktor">
+            <img src="images/arcane_logo.png" alt="" id="arcane_logo">
+        </div>
+        <ul id="menu_icon">
+            <li><img src="images/menu_icon.png" alt="" class="menu_icon_img1"><a href="#main_page" id="scroll_move">Main</a></li>
+            <li><img src="images/menu_icon.png" alt="" class="menu_icon_img2"><a href="#story_page" id="scroll_move">Story</a></li>
+            <li><img src="images/menu_icon.png" alt="" class="menu_icon_img3"><a href="#character_page" id="scroll_move">Character</a></li>
+            <li><img src="images/menu_icon.png" alt="" class="menu_icon_img4"><a href="#gallery_page" id="scroll_move">Gallery</a></li>
+        </ul>
         <div id="mouse">
+            <h1>scroll</h1>
             <div id="wheel"></div>
         </div>
-    </div>
-    <header>
-        <h1 id="logo">PARK JUNKYU</h1>
-        <ul id="menu">
-            <li><a href="#main">Home</a></li>
-            <li><a href="#main_work">Main</a></li>
-            <li><a href="#pc_work">PC.ver</a></li>
-            <li><a href="#about_me">About</a></li>
-            <li><a href="#contact_me">Contact</a></li>
-        </ul>
-        <ul id="mobile_menu">
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </header>
-    <div id="menu_popup">
-        <img src="icons/close_btn.png" alt="" id="close_btn">
-        <ul id="menu_popup_menu">
-            <li><a href="#main">Home</a></li>
-            <li><a href="#main_work">Main</a></li>
-                <ul class="sub">
-                    <li>BTS</li>
-                </ul>
-            </li>
-            <li><a href="#pc_work">Pc.ver</a>
-                <ul class="sub">
-                    <li></li>
-                    <li>
-                        <a href="https://pjk0305.github.io/laneige/" target='_blank'>Laneige</a>
-                    </li>
-                    <li>
-                        <a href="https://pjk0305.github.io/lotteworld/" target='_blank'>Lotteworld</a>
-                    </li>
-                    <li>
-                        <a href="https://pjk0305.github.io/Ottogi/" target='_blank'>Ottogi</a>
-                    </li>
-                    <li>
-                        <a href="https://pjk0305.github.io/Subway/" target='_blank'>Subway</a>
-                    </li>
-                    <li>
-                        <a href="https://pjk0305.github.io/Glowoasis/" target='_blank'>Glowoasis</a>
-                    </li>
-                </ul>
-            </li>
-            <li><a href="#about_me">About</a></li>
-            <li><a href="#contact_me">Contact</a></li>
-        </ul>
-    </div>
-    <section id="main_work">
-        <div id="main_work_title">
-            <h3>MAIN PORTFOLIO</h3>
-            <p>I enjoyed watching the animation arcane,<br> So I designated it as my first main portfolio</p>
+    </div> 
+
+    <div id="story_page">
+        <div class="story_page_title">
+            <h1>STORY</h1>
         </div>
-        <img src="images/PC_IMG.PNG" alt="" id="main_work_img">
-        <div id="main_work1">
-            <div id="main_work1_text">
-                <div id="main_work1_fonts">
-                    <h2>fonts</h2>
-                    <ul>
-                        <li>
-                            <h3>Six Caps</h3>
-                            <h4>Vernon Adams</h4>
-                            <h5>Almost before we knew it, we had left the ground.</h5>
-                        </li>
-                        <li>
-                            <h3>Oleo Script<br>Swash Caps</h3>
-                            <h4>soytutype fonts</h4>
-                            <h5>Almost before we knew it, we had left the ground.</h5>
-                        </li>
-                        <li>
-                            <h3>Koulen</h3>
-                            <h4>Danh Hong</h4>
-                            <h5>Almost before we knew it, we had left the ground.</h5>
-                        </li>
-                    </ul>
+        <div id="story_mouse">
+            <h1>left and right</h1>
+            <div id="story_wheel"></div>
+        </div>
+        <div class="splitview skewed">
+            <div class="panel bottom">
+                <div class="content">
+                    <div class="description">
+                        <h1>Piltover</h1>
+                        <p>Jaun is a huge underground city located under a deep valley and valley that runs through the filter over.</p>
+                    </div>
+    
+                    <img src="images/piltover.jpg" alt="Original">
                 </div>
             </div>
+    
+            <div class="panel top">
+                <div class="content">
+                    <div class="description">
+                        <h1>Zaun</h1>
+                        <p>Filtover is a prosperous progressive city, and its influence is increasing. This is the cultural center of Baloran, and it is also a place where art and technology, commerce and innovation develop together.</p>
+                    </div>
+    
+                    <img src="images/zaun.jpg" alt="Duotone">
+                </div>
+            </div>
+    
+            <div class="handle"></div>
         </div>
-        <div id="main_work2">
-            <div id="main_work2_text">
-                <p>넷플릭스에서 방영된 애니메이션 TV시리즈 리그 오브 레전드 유니버스의 두 도시국가 필트오버와 자운을 배경으로 징크스와 바이의 탄생과 비극을 그린 드라마 '아케인'을 주제로 소개 사이트를 제작하였습니다. 애니메이션속 어두운 분위기를 연출하되 스포일러가 되지않도록 많은 노력을 기울였습니다.</p>
-                <button><a href="https://pjk0305.github.io/main_portfolio/" target='_blank'>View More</a></button>
-            </div>
-        </div>
-    </section>
-    <section id="pc_work">
-        <h3>SUB PORTFOLIO</h3>
-        <p>First work is my representative portfolio.<br>And besides this work, I’m looking forward for new projects and opportunities.</p>
-            <ul>
-                <li><img src="images/laneige.jpg" alt=""><button type="button" onclick="window.open('https://pjk0305.github.io/laneige/');">LANEIGE</button></li>
-                <li><img src="images/lotteworld.jpg" alt=""><button type="button" onclick="window.open('https://pjk0305.github.io/lotteworld/');">Lotteworld</button></li>
-                <li><img src="images/Ottogi.jpg" alt=""><button type="button" onclick="window.open('https://pjk0305.github.io/Ottogi/');">Ottogi</button></li>
-                <li><img src="images/subway.jpg" alt=""><button type="button" onclick="window.open('https://pjk0305.github.io/subway/');">Subway</button></li>
-                <li><img src="images/Glowoasis.jpg" alt=""><button type="button" onclick="window.open('https://pjk0305.github.io/Glowoasis/');">Glowoasis</button></li>
-                <li><img src="images/bts.jpg" alt=""><button type="button" onclick="window.open('https://pjk0305.github.io/bts/');">BTS</button></li>
-            </ul>
-    </section>
-    <section id="about_me">
-        <h3>About Me</h3>
-        <img src="" alt="" id="about_me_img">
-        <h4>web, ux/ui designer</h4>
-        <h2>Junkyu Park</h2>
-        <article id="about_me1">
-            <div id="liscence">
-                <h4>UX/UI Designer<br>Park Jun Kyu</h4>
-                <p>안녕하세요, 하루하루 성장하는 웹퍼블리셔를 꿈꾸는 박준규입니다. </p>
-            </div>
-            <div id="skills">
-                <h4>skills</h4>
-                <ul>
-                    <li>
-                        <h5>Photoshop</h5>
-                        <h6>95%</h6>
-                        <div class="skills_bg">
-                            <div class="skills_box"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <h5>Illustrator</h5>
-                        <h6>85%</h6>
-                        <div class="skills_bg">
-                            <div class="skills_box"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <h5>html5 & css3</h5>
-                        <h6>80%</h6>
-                        <div class="skills_bg">
-                            <div class="skills_box"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <h5>Java script</h5>
-                        <h6>80%</h6>
-                        <div class="skills_bg">
-                            <div class="skills_box"></div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </article>
-    </section>
+    </div>
 
-    <section id="contact_me">
-        <h4>Contact Me</h4>
-        <ul>
-            <li>
-                <p>JunKyu Park<br>010-2435-2974</p>
-            </li>
-            <li>
-                <p>Republic of Korea<br> Uijeongbu-si, Gyeonggi-do</p>
-            </li>
-            <li>
-                <p>mail<br>parkjk1968@naver.com</p>
-            </li>
+    <div id="character_page">
+        <div id="character_wrap">
+            <h1>CHARACTER</h1>
+            <img src="images/closebt.png" alt="" id="character_wrap_closebt">
+            <div id="character_box">
+                <ul id="character_icon">
+                    <li><img src="images/jinx_icon.png" alt="" id="jinx_icon"></li>
+                    <li><img src="images/vi_icon.png" alt="" id="vi_icon"></li>
+                    <li><img src="images/Silco_icon.png" alt="" id="slico_icon"></li>
+                    <li><img src="images/vander_icon.png" alt="" id="vander_icon"></li>
+                </ul>
+                <div class="character_info">
+                    <div class="character_info_box1">
+                        <img id="character_info_img" src="images/CharacterPoster-Jinx.jpg" alt="">
+                    </div>
+                    <div class="character_info_box2">
+                        <h3>Jinx</h3>
+                        <p>Name : Jinx<br>One's real name : Powder<br>Voice actor : Ella Purnell<br></p>
+                        <iframe width="500" height="300" src="https://www.youtube.com/embed/qhs5DTaOzHU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="character_video"></iframe>
+                        <div class="btn" onclick="window.open('https://namu.wiki/w/%EC%95%84%EC%BC%80%EC%9D%B8:%20%EB%A6%AC%EA%B7%B8%20%EC%98%A4%EB%B8%8C%20%EB%A0%88%EC%A0%84%EB%93%9C')">
+                            <span>View more</span>
+                        </div>
+                        <div class="sns_icon">
+                            <img src="images/facebook_icon.png" alt="" class="facebook_icon">
+                            <img src="images/instagram_icon.png" alt=""class="instagram_icon">
+                            <img src="images/youtube_icon.png" alt="" class="youtube_icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        <ul id="jinx_bg">
+            <div class="jinx_text-1 mousemove-effect-1-el" data-mousemove-effect1-hor-res="0.1" data-mousemove-effect1-ver-res="0.1">CHARACTER</div>
+            <div class="jinx_text-2 mousemove-effect-1-el"  data-mousemove-effect1-hor-res="-0.1" data-mousemove-effect1-ver-res="-0.1">CLICK</div>
+            <li><img src="images/jinx_bg_effect.png" alt="" class="jinx_effect"></li>
         </ul>
-    </section>
-    <footer>
-        <h3>PARK</h3>
-        <p>2021 copyright @ ALL RIGHTS RESERVED.<br>creating modern and responsive design for Web and Mobile</p>
-    </footer>
+        <div class='outer-scratch'>
+            <div class="inner-scratch">
+              <div class="background grain"></div>
+            </div>
+          </div>
+    </div>
+    <div id="gallery_page">
+        <div class="gallery_title">
+            <h1>Content Gallery</h1>
+        </div>
+        <img src="images/gallery_bd.png" alt="" id="gallery_bd">
+        <div id="gallery_wrap">
+            <ul id="gallery_slide">
+                <li>
+                    <a href="https://youtu.be/cMzi3-2Nct0" target='_blank'>
+                        <img src="images/gallery-1.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtu.be/mqMYpAuxqbk" target='_blank'>
+                        <img src="images/gallery-2.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtu.be/0JSwG2sqUm8" target='_blank'>
+                        <img src="images/gallery-3.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtu.be/8dUZ0WSNbjg" target='_blank'>
+                        <img src="images/gallery-4.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtu.be/bXocSEhAQ2M" target='_blank'>
+                        <img src="images/gallery-5.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtu.be/F5tSoaJ93ac" target='_blank'>
+                        <img src="images/gallery-6.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtu.be/4Ps6nV4wiCE" target='_blank'>
+                        <img src="images/gallery-7.jpg" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="gallery_box">
+            <h1>CLICK</h1>
+        </div>
+        <img src="images/prev_bt.png" alt="" id="gallery_prev_bt">
+        <img src="images/next_bt.png" alt="" id="gallery_next_bt">
+        <div id="footer">
+            <div id="footer_left">
+                <a href="https://www.riotgames.com/ko" target='_blank'><img src="images/riot-games-logo.png" alt="" id="riotgames_icon"></a>
+            </div>
+            <div id="footer_center">
+                <h1>-지금 만나보세요-</h1>
+                <a href="https://www.netflix.com/kr/title/81435684" target='_blank'><img src="images/netflix.png" alt="" id="netflix_icon"></a>
+            </div>
+            <div id="footer_right">
+                <img src="images/footer_icon.png" alt="" id="footer_icon">
+            </div>
+        </div>  
+    </div>
+</div>
 </body>
 </html>
